@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+{% block main %}
+    <div class="row">
+        <div class="group_student_list">
+            {% if groups %}
+                <table class="bordered highlighted">
+                    <caption>Учет групп и студентов
+                    </caption>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Группа</th>
+                            <th>Количество студентов</th>
+                            <th>Староста</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in groups %}
+                            <tr>
+                                <td><a href="#">{{forloop.counter}}</a> </td>
+                                <td><a href="{% url 'record:group' item.group__id%}">{{item.group__name}}</a> </td>
+                                <td><a href="#">{{item.total}}</a> </td>
+                                <td><a href="#">{{item.group__starosta__name__first_name}}&nbsp;{{item.group__starosta__name__last_name}}</a> </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+{% block login %}
+    {% include "login/index.html" %}
+{% endblock %}

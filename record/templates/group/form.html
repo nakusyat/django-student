@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+{% block main %}
+    <div class="row">
+        <div class="group_student_list">
+            <form action="{{ action }}" method="post">
+                {% csrf_token %}
+                {{form}}
+                <input type="submit" value="{{ button }}">
+            </form>
+             {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li class="{{message.tags}} green-text"> {{message}}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

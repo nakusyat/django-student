@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+{% block main %}
+    <div class="row">
+        <div class="group_student_list">
+            {%  if group %}
+                <p>Список студентов в группе <span class="group_name">{{group}}</span>
+                     <a  title="Редактировать {{ group }}" data-group_id="{{ group.id }}" class="group_edit">
+                        <i class="material-icons">edit</i>
+                     </a>
+                </p>
+                <ul class="collapsible" data-collapsible="expandable">
+                {% for item in students %}
+                    <li>
+                        <div class="collapsible-header"><span>{{item.first_name}}</span><span>{{item.last_name}}</span><a class="stud_delete right" data-stud_id="{{ item.id }}">Удалить</a><a class="stud_edit right" data-stud_id="{{ item.id }}">Редактировать</a></div>
+                        <div class="collapsible-body">
+                             <ul class="collection with-header">
+                                <li class="collection-item">{{ item.birth_date|date:'Y-m-d' }}</li>
+                                <li class="collection-item">{{ item.stud_no }}</li>
+                            </ul>
+                        </div>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+
+            {% if messages %}
+                <ul>
+                    {% for message in messages %}
+                        <li class="{{message.tags}} green-text"> {{message}}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

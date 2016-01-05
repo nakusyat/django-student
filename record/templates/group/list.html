@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{% block main %}
+    <div class="row">
+        <div class="group_student_list">
+            <table>
+                <caption>Список всех групп
+                    <a class="right" href="{% url 'record:group_add' %}"><i class="small material-icons caption_icon">add</i>
+                        <span>Добавить новую группу</span>
+                    </a>
+                </caption>
+                {% if groups %}
+                    <thead>
+                        <tr>
+                            <th>Наименование группы</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in groups %}
+                            <tr>
+                                <td>{{item}}<a class="group_delete right" data-group_id="{{ item.id }}">Удалить</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                {% else %}
+                    <p>Пустой список</p>
+                {% endif %}
+            </table>
+        </div>
+    </div>
+{% endblock %}

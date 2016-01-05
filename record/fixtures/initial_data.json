@@ -1,0 +1,65 @@
+[
+    {
+    "model": "record.Group",
+    "pk": 1,
+    "fields": {
+      "name": "Computer Engineering"
+    }
+  },
+  {
+    "model": "record.Group",
+    "pk": 2,
+    "fields": {
+      "name": "Chemistry Engineering"
+    }
+  },
+  {
+    "model": "record.Student",
+    "pk": 1,
+    "fields": {
+      "first_name": "John",
+      "last_name": "Lennon",
+      "birth_date":"1990-04-13",
+      "stud_no":"1251Y01008",
+      "group": 1
+    }
+  },
+  {
+    "model": "record.Student",
+    "pk": 2,
+    "fields": {
+      "first_name": "Paul",
+      "last_name": "McCartney",
+      "birth_date":"1988-02-20",
+      "stud_no":"1251Y01010",
+      "group": 1
+    }
+  },
+    {
+    "model": "record.Student",
+    "pk": 3,
+    "fields": {
+      "first_name": "John",
+      "last_name": "Mayer",
+      "birth_date":"1970-01-10",
+      "stud_no":"1251Y01011",
+      "group": 2
+    }
+  },
+  {
+    "model": "record.Starosta",
+    "pk": 1,
+    "fields": {
+      "name": 1,
+      "group":1
+    }
+  },
+  {
+    "model": "record.Starosta",
+    "pk": 2,
+    "fields": {
+      "name": 3,
+      "group":2
+    }
+  }
+]

@@ -1,0 +1,40 @@
+/*index view begin */
+.group_student_list {
+    padding: 30px 30px;
+}
+
+.group_student_list table > caption {
+    text-align: left;
+}
+
+.caption_icon {
+    vertical-align: middle;
+    padding-right: 5px;
+}
+/*index view end */
+
+/*group index view begin*/
+.group_edit, .group_save {
+    padding-left: 10px;
+    cursor: pointer;
+}
+.group_edit i {
+    vertical-align: middle;
+}
+.group_name {
+    padding-left: 10px;
+}
+.group_student_list a {
+    margin-right: 10px;
+}
+
+.group_student_list .collapsible-header span {
+    padding: 0 1rem;
+}
+/*group index view end*/
+
+/*group list begin*/
+.group_delete {
+    cursor: pointer;
+}
+/*group list end*/
